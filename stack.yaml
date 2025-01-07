@@ -1,5 +1,6 @@
 snapshot: lts-23.0
-compiler: ghc-9.8.4
+compiler: ghc-9.8.3
 
 nix:
   enable: true
+  shell-file: shell.nix

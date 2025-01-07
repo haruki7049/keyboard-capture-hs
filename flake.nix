@@ -3,6 +3,7 @@
     nixpkgs.url = "github:nixos/nixpkgs/nixpkgs-unstable";
     systems.url = "github:nix-systems/default";
     stacklock2nix.url = "github:cdepillabout/stacklock2nix";
+    flake-compat.url = "github:edolstra/flake-compat";
     flake-parts = {
       url = "github:hercules-ci/flake-parts";
       inputs.nixpkgs-lib.follows = "nixpkgs";
@@ -20,7 +21,7 @@
           inputs.stacklock2nix.overlay
           (final: prev:
             let
-              ghc = final.haskell.packages.ghc984;
+              ghc = final.haskell.packages.ghc983;
             in
             {
             test-stack = final.stacklock2nix {
@@ -29,6 +30,7 @@
               additionalDevShellNativeBuildInputs = stacklockHaskellPkgSet: [
                 final.stack
                 final.nil
+                ghc.haskell-language-server
               ];
             };
           })
