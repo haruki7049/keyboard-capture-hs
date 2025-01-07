@@ -1,0 +1,21 @@
+name: "keyboard-capture"
+version: 0.0.0
+author: "haruki7049"
+
+dependencies:
+  - base >= 4.13 && < 5
+
+ghc-options:
+- -Wall
+- -Wcompat
+- -Widentities
+- -Wincomplete-record-updates
+- -Wincomplete-uni-patterns
+- -Wmissing-export-lists
+- -Wmissing-home-modules
+- -Wpartial-fields
+- -Wredundant-constraints
+
+executable:
+  main: Main.hs
+  source-dirs: src
